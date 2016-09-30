@@ -130,6 +130,14 @@ public class Recipe {
         return recipe;
     }
 
+    public Intent getViewIntent(Context context) {
+        Intent intent = new Intent(context, RecipeActivity.class);
+        intent.setAction(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(getUrl()));
+        return intent;
+    }
+
+
     public static class Ingredient {
         private String amount;
         private String description;
